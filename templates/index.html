@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD Web App</title>
+</head>
+<body>
+    <h1>CRUD Web App</h1>
+    <h2>Add Item</h2>
+    <form method="post" action="/add">
+        <input type="text" name="name" placeholder="Item Name" required>
+        <button type="submit">Add</button>
+    </form>
+    
+    <h2>Item List</h2>
+    <ul>
+        {% for item in items %}
+        <li>
+            {{ item.name }}
+            <a href="/edit/{{ item.id }}">Edit</a>
+            <a href="/delete/{{ item.id }}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
